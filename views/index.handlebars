@@ -1,0 +1,35 @@
+<div class = "container">
+
+<h1> LET'S EAT! </h1>
+
+<form class = "create-form">
+  <div class="form-group" id = "input">
+    <label for="eat"></label>
+    <input type="input" class="form-control" id="eat" value = "" name = "name" placeholder="What Would You Like To Eat?">
+
+  </div>
+    <button id="thing" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> bblock devoured}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+
+        {{/if}}
+    {{/each}}
+</ul>
+
+
+</div>
