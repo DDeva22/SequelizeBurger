@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 
-const db = require("../models/burger.js");
+const db = require("../models");
 
 
 
 router.get("/", function(req, res){
-    db.burgers.find({}).then(function(dbburger){
+    db.burgers.findAll({}).then(function(dbburger){
         
         res.json(dbburger);
     });

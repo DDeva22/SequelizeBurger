@@ -1,8 +1,24 @@
 
 module.exports = function( sequelize, DataTypes){
     const burgers = sequelize.define("burgers", {
-        burger_name: DataTypes.STRING,
-        devoured: DataTypes.BOOLEAN
+        burger_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len:[1]
+            },
+            timestamps: false
+        },
+        devoured: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            validate: {
+                len: [1]
+            },
+            timestamps: false
+        },
+        
+
 
     });
     return burgers;
@@ -12,7 +28,8 @@ module.exports = function( sequelize, DataTypes){
 
 
 
-
+// burger_name: DataTypes.STRING,
+// devoured: DataTypes.BOOLEAN
 
 
 

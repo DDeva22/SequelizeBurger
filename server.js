@@ -3,6 +3,7 @@ const path = require("path");
 const exphbs = require("express-handlebars");
 
 const routes = require("./controllers/burgers_controller.js");
+const db = require("./models");
 
 
 const app = express();
@@ -29,11 +30,11 @@ app.set("view engine", "handlebars");
 
 
 
-
-app.listen(PORT, function() {
-    console.log(`APP LISTENING: ${PORT}`);
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+        console.log(`APP LISTENING: ${PORT}`);
+    });
 });
-
 
 
 
